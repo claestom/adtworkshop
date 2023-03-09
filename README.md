@@ -38,7 +38,9 @@ az dt create --dt-name $dtName --resource-group $resourceGroup --location $locat
 
 ## Create models
   
-Run following command: git clone https://github.com/claestom/adtworkshop.git
+Run following command: 
+  git clone https://github.com/claestom/adtworkshop.git
+  cd adtworkshop
 
 az dt model create --dt-name walloniadt --models location_model.json
 
