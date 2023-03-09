@@ -1,6 +1,8 @@
 # *Set up environment*
 
-## First set variables below
+Log in to the Azure Portal and start Bash session ([tutorial](https://learn.microsoft.com/en-us/azure/cloud-shell/quickstart?tabs=azurecli))
+
+## St variables below
 
 location="westeurope" 
 
