@@ -60,7 +60,7 @@ az dt twin create  --dt-name walloniadt --dtmi "dtmi:contosocom:DigitalTwins:Loc
 
 az dt twin create  --dt-name walloniadt --dtmi "dtmi:contosocom:DigitalTwins:Building;1" --twin-id E6KA6K
 
-az dt twin create  --dt-name walloniadt --dtmi "dtmi:contosocom:DigitalTwins:Hal;1" --twin-id Hal1 --properties "{\"nPeople\": 143, \"Humidity\": 56,\"Temperature\":21}"
+"az dt twin create  --dt-name walloniadt --dtmi "dtmi:contosocom:DigitalTwins:Hal;1" --twin-id Hal1 --properties "{\"nPeople\": 143, \"Humidity\": 56,\"Temperature\":21}""
 
 az dt twin create  --dt-name walloniadt --dtmi "dtmi:contosocom:DigitalTwins:Computer;1" --twin-id SurfaceStudio --properties "{\"CPU\": 23, \"Memory\": 56}"   
 
