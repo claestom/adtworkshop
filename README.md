@@ -12,7 +12,7 @@ storageAccount="<insert name>" --make sure this name is globally unique & must b
 
 functionApp="<insert name>"
 
-dtName="<insert name>"
+dtName="walloniadt"
 
 ## Copy paste commands below in bash session
 
