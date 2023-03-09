@@ -37,6 +37,8 @@ az functionapp create --resource-group $resourceGroup --consumption-plan-locatio
 az dt create --dt-name $dtName --resource-group $resourceGroup --location $location
 
 ## Create models
+  
+Run following command: git clone https://github.com/claestom/adtworkshop.git
 
 az dt model create --dt-name walloniadt --models location_model.json
 
