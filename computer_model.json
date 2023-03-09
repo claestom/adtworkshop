@@ -1,0 +1,17 @@
+{
+    "@id": "dtmi:contosocom:DigitalTwins:Computer;1",
+    "@type": "Interface",
+    "@context": "dtmi:dtdl:context;2",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "CPU",
+        "schema": "double"
+      },
+      {
+        "@type": "Property",
+        "name": "Memory",
+        "schema": "double"
+      }
+    ]
+  }

@@ -1,0 +1,28 @@
+{
+    "@id": "dtmi:contosocom:DigitalTwins:Hal;1",
+    "@type": "Interface",
+    "@context": "dtmi:dtdl:context;2",
+    "contents": [
+        {
+            "@type": "Relationship",
+            "name": "provides",
+            "target": "dtmi:contosocom:DigitalTwins:Computer;1"
+        },
+        {
+            "@type": "Property",
+            "name": "Temperature",
+            "schema": "double"
+        },
+        {
+            "@type": "Property",
+            "name": "nPeople",
+            "schema": "double"
+        }
+        ,
+        {
+            "@type": "Property",
+            "name": "Humidity",
+            "schema": "double"
+        }
+    ]
+}

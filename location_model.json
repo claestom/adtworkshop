@@ -1,0 +1,22 @@
+{
+    "@id": "dtmi:contosocom:DigitalTwins:Location;1",
+    "@type": "Interface",
+    "@context": "dtmi:dtdl:context;2",
+    "contents": [
+        {
+            "@type": "Relationship",
+            "name": "contains",
+            "target": "dtmi:contosocom:DigitalTwins:Building;1"
+        },
+        {
+            "@type": "Property",
+            "name": "Latitude",
+            "schema": "double"
+        },
+        {
+            "@type": "Property",
+            "name": "Longitude",
+            "schema": "double"
+        }
+    ]
+}

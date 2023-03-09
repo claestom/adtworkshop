@@ -1,0 +1,12 @@
+{
+    "@id": "dtmi:contosocom:DigitalTwins:Person;1",
+    "@type": "Interface",
+    "@context": "dtmi:dtdl:context;2",
+    "contents": [
+      {
+        "@type": "Relationship",
+        "name": "owns",
+        "target": "dtmi:contosocom:DigitalTwins:Computer;1"
+      }
+    ]
+  }
