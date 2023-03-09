@@ -1,6 +1,6 @@
 # *Set up environment*
 
-## *First set variables below*
+## First set variables below
 
 location="westeurope" 
 
@@ -12,7 +12,7 @@ functionApp="<insert name>"
 
 dtName="<insert name>"
 
-## *Copy paste commands below in bash session*
+## Copy paste commands below in bash session
 
 az extension add --name functionapp
 
