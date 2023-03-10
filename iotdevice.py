@@ -33,7 +33,7 @@ def simulate_messages():
     "Temperature": get_temp(),
     "Humidity": get_humidity(),
     "nPeople": get_people(),
-    "Memory": get_memory,
+    "Memory": get_memory(),
     "CPU": get_cpu()
     }
     ))
