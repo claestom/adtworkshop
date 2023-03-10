@@ -8,6 +8,7 @@ Download .NET 6.0: https://dotnet.microsoft.com/en-us/download
 
 Go to the Azure Portal and create account:
     - Students: [Azure for Students](https://azure.microsoft.com/en-us/free/students/)
+    
     - Non-students: [Free Azure Trial](https://azure.microsoft.com/en-gb/free/search/?OCID=AIDcmm3bvqzxp1_SEM_a12a261aff841e1a17f24211a7299a56:G:s&ef_id=a12a261aff841e1a17f24211a7299a56:G:s&msclkid=a12a261aff841e1a17f24211a7299a56)
 
 ## First set variables below
