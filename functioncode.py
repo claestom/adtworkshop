@@ -40,7 +40,7 @@ namespace Company.Function
 
                     // <Find_device_ID_and_temperature>
                     JObject deviceMessage = (JObject)JsonConvert.DeserializeObject(eventGridEvent.Data.ToString());
-                    //string deviceId = (string)deviceMessage["systemProperties"]["iothub-connection-device-id"];
+                    string deviceId = (string)deviceMessage["systemProperties"]["iothub-connection-device-id"];
                     string encoded_body = (string)deviceMessage["body"];
 
                     // string body = decode body base 64
@@ -49,14 +49,24 @@ namespace Company.Function
 
                     JObject body_json = (JObject)JsonConvert.DeserializeObject(decoded_body);
                     var nPeople = body_json["nPeople"];
+                    var CPU = body_json["CPU"];
+                    var Humidity = body_json["Humidity"];
+                    var Memory = body_json["Memory"];
+                    var Temperature = body_json["Temperature"];
                     // </Find_device_ID_and_temperature>
 
-                    log.LogInformation($"Device:{deviceId} Moisture is:{soil_moisture}");
+                    log.LogInformation($"Number of People is:{nPeople}");
 
                     // <Update_twin_with_device_temperature>
                     var updateTwinData = new JsonPatchDocument();
+                    var updateTwinDataComputer = new JsonPatchDocument();
                     updateTwinData.AppendReplace("/nPeople", nPeople.Value<double>());
-                    await client.UpdateDigitalTwinAsync(Hal1, updateTwinData);
+                    updateTwinData.AppendReplace("/Humidity", Humidity.Value<double>());
+                    updateTwinData.AppendReplace("/Temperature", Temperature.Value<double>());
+                    updateTwinDataComputer.AppendReplace("/CPU", CPU.Value<double>());
+                    updateTwinDataComputer.AppendReplace("/Memory", Memory.Value<double>());
+                    await client.UpdateDigitalTwinAsync(deviceId, updateTwinData);
+                    await client.UpdateDigitalTwinAsync("SurfaceStudio", updateTwinDataComputer);
                     // </Update_twin_with_device_temperature>
                 }
             }
