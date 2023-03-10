@@ -223,3 +223,6 @@ Go to *Workspace* and click *Deploy...* and next *Deploy to Function App...*
 
     az eventgrid event-subscription create --name $eventhubSub --event-delivery-schema eventgridschema --source-resource-id /subscriptions/$subId/resourceGroups/$resourceGroup/providers/Microsoft.Devices/IotHubs/$iotHubName --included-event-types Microsoft.Devices.DeviceTelemetry --endpoint-type azurefunction --endpoint /subscriptions/$subId/resourceGroups/$resourceGroup/providers/Microsoft.Web/sites/$functionApp/functions/IoTHubtoTwins
 
+# STEP 4: Test E2E solution
+
+    python iotdevice.py
