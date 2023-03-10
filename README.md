@@ -1,4 +1,11 @@
-# *Set up environment*
+# STEP 1: Set up environment
+
+## Download required tools
+
+Download VS Code: https://code.visualstudio.com/download
+
+Download .NET 6.0: https://dotnet.microsoft.com/en-us/download
+
 ## First set variables below
 
 location="westeurope" 
@@ -12,6 +19,10 @@ functionApp=fahackathon$(shuf -i 10000-99999 -n 1)
 dtName=dthackathon$(shuf -i 10000-99999 -n 1)
 
 iotHubName=iothubhackathon$(shuf -i 10000-99999 -n 1)
+
+deviceName=device$(shuf -i 10000-99999 -n 1)
+
+eventhubSub=ehsub$(shuf -i 10000-99999 -n 1)
 
 ## Copy paste commands below in bash session
 
@@ -80,4 +91,127 @@ az dt twin relationship create -n $dtName --relationship-id rel1 --relationship 
 az dt twin relationship create -n $dtName --relationship-id rel1 --relationship provides --twin-id Hal1 --target SurfaceStudio
 
 az dt twin relationship create -n $dtName --relationship-id rel1 --relationship owns --twin-id Tom --target SurfaceStudio
+
+# STEP 2: Configure IoT Hub and Azure Functions
+## Create device in IoT Hub to connect to
+
+az iot hub device-identity create --hub-name $iotHubName --device-id $deviceName
+
+az iot hub device-identity connection-string show --hub-name $iotHubName --device-id $deviceName
+
+--> Copy the 'connectionString'
+
+vim iotdevice.py
+
+i
+
+--> Paste the replace connectionString with the value you just copied and press 'esc' afterwards
+
+:wq
+
+--> You should have returned to the original window
+
+/usr/bin/python3.9 -m pip install --upgrade pip
+
+pip install azure-iot-hub azure-iot-device
+
+python iotdevice.py
+
+# STEP 3: Create and deploy Azure Functions
+
+## Open local command prompt
+
+mkdir digitaltwin
+
+cd digitaltwin
+
+code .
+
+### First install following extensions:
+
+Ctrl + shift + X
+
+Azure Tools
+
+Azure Account
+
+### Sign in to Azure and create Function
+
+Ctrl + shift + P
+
+Search: Azure: Sign In 
+
+Shift + Alt + A
+
+Go to *Workspace* and click on *Create Function...* 
+
+On top a pop-up will follow.
+
+    Select *digitaltwin*
+
+    C#
+
+    .NET LTS
+
+    Azure Event Grid trigger
+
+    Replace EventGridTrigger1 with digitaltwindemo
+
+    Leave namespace like it is (enter)
+
+Ctrl + Shift + E
+
+open *digitaltwindemo.cs*
+
+### Download following packages by running the commands below in a terminal window inside VS Code
+
+Open new terminal: Ctrl + SHift + ù
+
+dotnet add package Azure.DigitalTwins.Core --version 1.4.0
+
+dotnet add package Azure.Identity --version 1.8.2
+
+dotnet add package Microsoft.Azure.WebJobs.Extensions.EventGrid --version 3.2.1
+
+### Add code to Function and deploy to the cloud
+
+Ctrl + Shift + E
+
+Replace code with code inside *functioncode.py* (GitHub - https://github.com/claestom/adtworkshop/blob/main/functioncode.py)
+
+Shift + Alt + A
+
+Go to *Workspace* and click *Deploy...* and next *Deploy to Function App...*
+
+    Pop-up will follow on top
+
+    Select
+
+    Select Subscription
+
+    Select functionapp created
+
+    Wait until deployment is completed (~1 minute)
+
+### Configure settings of the Function and connect to the IoT Hub
+
+az functionapp identity assign --resource-group $resourceGroup --name $functionApp
+
+--> Copy the PrincipalId and past it between " " as the principal-ID in the command below
+
+az dt role-assignment create --dt-name $dtName --assignee "" --role "Azure Digital Twins Data Owner"
+
+az dt show --dt-name $dtName
+
+--> Copy the hostname and past it after *https://*
+
+az functionapp config appsettings set --resource-group $resourceGroup --name $functionApp --settings "ADT_SERVICE_URL=https://"
+
+subId=$(az account show --query 'id' --output tsv)
+
+az provider register --namespace Microsoft.Web
+
+az provider register --namespace Microsoft.EventGrid
+
+az eventgrid event-subscription create --name $eventhubSub --event-delivery-schema eventgridschema --source-resource-id /subscriptions/$subId/resourceGroups/$resourceGroup/providers/Microsoft.Devices/IotHubs/$iotHubName --included-event-types Microsoft.Devices.DeviceTelemetry --endpoint-type azurefunction --endpoint /subscriptions/$subId/resourceGroups/$resourceGroup/providers/Microsoft.Web/sites/$functionApp/functions/IoTHubtoTwins
 
