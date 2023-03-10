@@ -18,7 +18,7 @@ def get_memory():
 def get_cpu():
     return r.randint(1,100)
 
-connection_string = "connectionString"
+connection_string = "HostName=iothubhackathon89041.azure-devices.net;DeviceId=Hal1;SharedAccessKey=dLz1yhrT37aK/l6PGu+oXf8wU3iX3JTrEfd0KUMM7xI="
 device_client = IoTHubDeviceClient.create_from_connection_string(connection_string)
 print('Connecting')
 device_client.connect()
@@ -28,18 +28,16 @@ print('Connected')
 def simulate_messages():
 
     message = Message(json.dumps({
-    "eventTopic": "WalloniaDT",
-    "eventType": "READOUT",
-    "Temperature": get_temp(),
-    "Humidity": get_humidity(),
     "nPeople": get_people(),
+    "CPU": get_cpu(),
+    "Humidity": get_humidity(),
     "Memory": get_memory(),
-    "CPU": get_cpu()
+    "Temperature": get_temp()
     }
     ))
 
-    message.content_encoding = "utf-8"
-    message.content_type = "application/json"
+    #message.content_encoding = "utf-8"
+    #message.content_type = "application/json"
 
     return message
 
@@ -48,6 +46,7 @@ while True:
     message = simulate_messages()
 
     device_client.send_message(message)
+    print(f"Simulated message: {message}")
     print("Simulated data: sent")
 
     time.sleep(10)
