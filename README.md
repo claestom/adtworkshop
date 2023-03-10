@@ -13,6 +13,8 @@ storageAccount="<insert name>" --make sure this name is globally unique & must b
 functionApp="<insert name>"
 
 dtName="walloniadt"
+  
+iotHubName="<insert name>"
 
 ## Copy paste commands below in bash session
 
