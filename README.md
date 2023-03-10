@@ -8,21 +8,21 @@ Download .NET 6.0: https://dotnet.microsoft.com/en-us/download
 
 ## First set variables below
 
-location="westeurope" 
+  location="westeurope" 
 
-resourceGroup=rghackathon$(shuf -i 10000-99999 -n 1)
+  resourceGroup=rghackathon$(shuf -i 10000-99999 -n 1)
 
-storageAccount=sahackathon$(shuf -i 10000-99999 -n 1)
+  storageAccount=sahackathon$(shuf -i 10000-99999 -n 1)
 
-functionApp=fahackathon$(shuf -i 10000-99999 -n 1)
+  functionApp=fahackathon$(shuf -i 10000-99999 -n 1)
 
-dtName=dthackathon$(shuf -i 10000-99999 -n 1)
+  dtName=dthackathon$(shuf -i 10000-99999 -n 1)
 
-iotHubName=iothubhackathon$(shuf -i 10000-99999 -n 1)
+  iotHubName=iothubhackathon$(shuf -i 10000-99999 -n 1)
 
-deviceName=device$(shuf -i 10000-99999 -n 1)
+  deviceName=device$(shuf -i 10000-99999 -n 1)
 
-eventhubSub=ehsub$(shuf -i 10000-99999 -n 1)
+  eventhubSub=ehsub$(shuf -i 10000-99999 -n 1)
 
 ## Copy paste commands below in bash session
 
