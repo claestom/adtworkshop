@@ -14,6 +14,8 @@ Go to the Azure Portal and create account:
 
 ## First set variables below
 
+Open the Azure Portal and start a [bash session](https://learn.microsoft.com/en-us/azure/cloud-shell/quickstart?tabs=azurecli)
+
     location="westeurope" 
 
     resourceGroup=rghackathon$(shuf -i 10000-99999 -n 1)
