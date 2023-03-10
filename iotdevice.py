@@ -30,13 +30,12 @@ def simulate_messages():
     message = Message(json.dumps({
     "eventTopic": "WalloniaDT",
     "eventType": "READOUT",
-    "data":{
     "Temperature": get_temp(),
     "Humidity": get_humidity(),
     "nPeople": get_people(),
     "Memory": get_memory,
     "CPU": get_cpu()
-    }}
+    }
     ))
 
     message.content_encoding = "utf-8"
