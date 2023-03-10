@@ -226,3 +226,5 @@ Go to *Workspace* and click *Deploy...* and next *Deploy to Function App...*
 # STEP 4: Test E2E solution
 
     python iotdevice.py
+    
+Go to your Azure Digital Twins instance in the Azure Portal and open the *Azure Digital Twins Explorer (preview)*
