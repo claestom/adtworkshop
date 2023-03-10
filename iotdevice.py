@@ -18,7 +18,7 @@ def get_memory():
 def get_cpu():
     return r.randint(1,100)
 
-connection_string = "HostName=iothubpocCG.azure-devices.net;DeviceId=pocCG;SharedAccessKey=+04tDLpk2UfOaaatBSjLtU2sFKoMD3HiyLpfTh6IdaI="
+connection_string = "connectionString"
 device_client = IoTHubDeviceClient.create_from_connection_string(connection_string)
 print('Connecting')
 device_client.connect()
