@@ -80,13 +80,13 @@ Open the Azure Portal and start a [bash session](https://learn.microsoft.com/en-
 
 ## Create twins
 
-    az dt twin create  --dt-name $dtName --dtmi "dtmi:contosocom:DigitalTwins:Location;1" --twin-id Charleroi --properties '{\"Latitude\": 50.41, \"Longitude\": 4.44}'
+    az dt twin create  --dt-name $dtName --dtmi "dtmi:contosocom:DigitalTwins:Location;1" --twin-id Charleroi --properties "{\"Latitude\": 50.41, \"Longitude\": 4.44}"
 
     az dt twin create  --dt-name $dtName --dtmi "dtmi:contosocom:DigitalTwins:Building;1" --twin-id E6KA6K
 
-    az dt twin create  --dt-name $dtName --dtmi "dtmi:contosocom:DigitalTwins:Hal;1" --twin-id Hal1 --properties '{\"nPeople\": 143, \"Humidity\": 56,\"Temperature\":21}'
+    az dt twin create  --dt-name $dtName --dtmi "dtmi:contosocom:DigitalTwins:Hal;1" --twin-id Hal1 --properties "{\"nPeople\": 143, \"Humidity\":      56,\"Temperature\":21}"
 
-    az dt twin create  --dt-name $dtName --dtmi "dtmi:contosocom:DigitalTwins:Computer;1" --twin-id SurfaceStudio --properties '{\"CPU\": 23, \"Memory\": 56}'  
+    az dt twin create  --dt-name $dtName --dtmi "dtmi:contosocom:DigitalTwins:Computer;1" --twin-id SurfaceStudio --properties "{\"CPU\": 23, \"Memory\": 56}"  
 
     az dt twin create  --dt-name $dtName --dtmi "dtmi:contosocom:DigitalTwins:Person;1" --twin-id Tom
 
