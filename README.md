@@ -159,7 +159,7 @@ On top a pop-up will follow.
 
     C#
 
-    .NET LTS
+    .NET 6 LTS
 
     Azure Event Grid trigger
 
