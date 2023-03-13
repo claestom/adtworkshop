@@ -6,6 +6,8 @@ Download VS Code: https://code.visualstudio.com/download
 
 Download .NET 6.0: https://dotnet.microsoft.com/en-us/download
 
+Download Git: https://git-scm.com/downloads
+
 Go to the Azure Portal and create account:
 
 - Students: [Azure for Students](https://azure.microsoft.com/en-us/free/students/)
@@ -127,7 +129,7 @@ Open the Azure Portal and start a [bash session](https://learn.microsoft.com/en-
 
 # STEP 3: Create and deploy Azure Functions
 
-## Open local command prompt
+## Open local Command Prompt
 
     mkdir digitaltwin
 
@@ -155,17 +157,17 @@ Go to *Workspace* and click on *Create Function...*
 
 On top a pop-up will follow.
 
-    Select *digitaltwin*
+    1) Select *digitaltwin*
 
-    C#
+    2) C#
 
-    .NET 6 LTS
+    3) .NET 6 LTS
 
-    Azure Event Grid trigger
+    4) Azure Event Grid trigger
 
-    Replace EventGridTrigger1 with digitaltwindemo
+    5) Replace EventGridTrigger1 with digitaltwindemo
 
-    Leave namespace like it is (enter)
+    6) Leave namespace like it is (enter)
 
     Ctrl + Shift + E
 
@@ -201,7 +203,7 @@ Go to *Workspace* and click *Deploy...* and next *Deploy to Function App...*
 
     Wait until deployment is completed (~1 minute)
 
-### Configure settings of the Function and connect to the IoT Hub
+### Configure settings of the Function and connect to the IoT Hub using the Azure Bash (check step 1 for tutorial on how to open a session)
 
     az functionapp identity assign --resource-group $resourceGroup --name $functionApp
 
@@ -211,7 +213,7 @@ Go to *Workspace* and click *Deploy...* and next *Deploy to Function App...*
 
     az dt show --dt-name $dtName
 
-    --> Copy the hostname and past it after *https://*
+    --> Copy the hostname and past it after https:// in the next command
 
     az functionapp config appsettings set --resource-group $resourceGroup --name $functionApp --settings "ADT_SERVICE_URL=https://"
 
