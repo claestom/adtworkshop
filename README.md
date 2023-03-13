@@ -246,3 +246,12 @@ Oreilly: [Hands-On Azure Digital Twins](https://learning.oreilly.com/library/vie
 [Azure Digital Twins Hands-On lab](https://github.com/Azure-Samples/digital-twins-samples/tree/master/HandsOnLab)
 
 [Product website](https://azure.microsoft.com/en-us/services/digital-twins/)
+
+[Digital Twin Definition Language](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/DTDL.v2.md)
+
+[BUilding Digital Twins using Azure - The IoT Show](https://learn.microsoft.com/en-us/shows/internet-of-things-show/building-a-digital-twins-platform-with-azure-iot-services)
+
+[A Flight into IoT - Digital Twin Example](https://www.youtube.com/watch?v=YcpAzAj-eRw&t=7440s)
+
+[IT/OT Data Integration with Azure Digital Twins, Azure Data Explorer, and Azure Synapse
+](https://learn.microsoft.com/en-us/shows/internet-of-things-show/itot-data-integration-with-azure-digital-twins-azure-data-explorer-and-azure-synapse)
