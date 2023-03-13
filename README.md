@@ -228,3 +228,19 @@ Go to *Workspace* and click *Deploy...* and next *Deploy to Function App...*
     python iotdevice.py
     
 Go to your Azure Digital Twins instance in the Azure Portal and open the *Azure Digital Twins Explorer (preview)*
+
+# Learning resources
+
+Oreilly: [Building Industrial Digital Twins](https://learning.oreilly.com/library/view/building-industrial-digital/9781839219078/?sso_link=yes&sso_link_from=Microsoft-Prod)
+
+Oreilly: [Hands-On Azure Digital Twins](https://learning.oreilly.com/library/view/hands-on-azure-digital/9781801071383/?sso_link=yes&sso_link_from=Microsoft-Prod)
+
+[Exam AZ-220: Microsoft Azure IoT Developer](https://learn.microsoft.com/en-us/certifications/exams/az-220)
+
+[MS Learn](https://docs.microsoft.com/en-us/learn/paths/develop-azure-digital-twins/)
+
+[Microsoft Documentation](https://learn.microsoft.com/en-us/azure/digital-twins/)
+
+[Azure Digital Twins Hands-On lab](https://github.com/Azure-Samples/digital-twins-samples/tree/master/HandsOnLab)
+
+[Product website](https://azure.microsoft.com/en-us/services/digital-twins/)
