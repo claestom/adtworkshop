@@ -127,6 +127,8 @@ Open the Azure Portal and start a [bash session](https://learn.microsoft.com/en-
 
     python iotdevice.py
 
+After you see some data appearing, this means the IoT device is working. CTRL-C to stop and proceed to STEP 3.
+
 # STEP 3: Create and deploy Azure Functions
 
 ## Open local Command Prompt
