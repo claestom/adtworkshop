@@ -155,7 +155,7 @@ Search: Azure: Sign In
 
     Shift + Alt + A
 
-Go to *Workspace* and click on *Create Function...* 
+Click on the Azure symbol in the left, vertical blade and go to *Workspace* and click on *Create Function...* 
 
 On top a pop-up will follow.
 
@@ -189,7 +189,9 @@ Open new terminal: Ctrl + SHift + ù
 
     Ctrl + Shift + E
 
-Replace code with code inside *functioncode.py* (GitHub - https://github.com/claestom/adtworkshop/blob/main/functioncode.py)
+Replace code with code inside *functioncode.py* (GitHub - https://github.com/claestom/adtworkshop/blob/main/functioncode.cs)
+
+    CTRL-S to save the changes
 
     Shift + Alt + A
 
