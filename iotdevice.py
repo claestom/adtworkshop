@@ -18,7 +18,7 @@ def get_memory():
 def get_cpu():
     return r.randint(1,100)
 
-connection_string = ""
+connection_string = "HostName=iothubhackathon89041.azure-devices.net;DeviceId=Hal1;SharedAccessKey=dLz1yhrT37aK/l6PGu+oXf8wU3iX3JTrEfd0KUMM7xI="
 device_client = IoTHubDeviceClient.create_from_connection_string(connection_string)
 print('Connecting')
 device_client.connect()
@@ -35,6 +35,9 @@ def simulate_messages():
     "Temperature": get_temp()
     }
     ))
+
+    #message.content_encoding = "utf-8"
+    #message.content_type = "application/json"
 
     return message
 
