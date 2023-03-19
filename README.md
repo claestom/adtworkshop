@@ -1,3 +1,5 @@
+The following workshop was created for the Citizens Of Wallonia Hackathon. Goal was to provide the participants a hands-on introduction to Azure Digital Twin.
+
 # STEP 1: Set up environment
 
 ## Download required tools
